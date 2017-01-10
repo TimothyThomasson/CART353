@@ -1,3 +1,3 @@
-# CART353
+# CART353 -- Timothy Thomasson
 
-Timothy Thomasson
+This repository holds work from *CART353 2017*. 
