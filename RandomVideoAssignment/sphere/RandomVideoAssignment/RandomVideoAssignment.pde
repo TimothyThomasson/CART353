@@ -1,7 +1,7 @@
 //Timothy Thomasson
 //Random Video Assignment
 
-//3D methods taken from in class assignment
+//3D methods taken from in class assignment from week 4
 
 //load sound stuff
 import ddf.minim.*;
