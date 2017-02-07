@@ -1,5 +1,9 @@
-import processing.video.*;
+//Timothy Thomasson
+//Random Video Assignment
 
+//3D methods taken from in class assignment
+
+//load sound stuff
 import ddf.minim.*;
 Minim minim;
 AudioInput in;
@@ -15,13 +19,14 @@ int numCols;
 int numRows;
 
 void setup() {
-
+//window 1080p size
   size(1920, 1080, P3D); 
   zoff = 1000.0;
   cell = 10;
   numCols = 60;
   numRows = 45;
 
+//instance of move (load clip)
   size(width, height);
   myMovie = new Movie(this, "bars.mp4");
   myMovie.loop();
@@ -30,7 +35,7 @@ void setup() {
   // use the getLineIn method of the Minim object to get an AudioInput
   in = minim.getLineIn();
 
-  // this array essentially lets us store (x, y, z) values: i and j will let us determine x and y, while the stored val is z
+  //array to store values
   heights = new float[numCols][numRows];
 }
 
@@ -38,7 +43,7 @@ void movieEvent(Movie c) {
   c.read();
 }
 
-// calculateHeights() is based on i, j, and a changing value of zoff
+// calculateHeights() based on i, j
 void calculateHeights() {
 
   for (int i = 0; i < numCols; i++) {
@@ -63,7 +68,7 @@ void calculateHeights() {
 void draw() {
   background(#FFF64B);
 
-  // fill our heights array with a new set of z vals
+  // fill heights array with a new set of z values
   calculateHeights();
   
 
@@ -99,7 +104,7 @@ void draw() {
       vertex(0, cell, heights[i][j+1]);
       endShape();
 
-      // popMatrix so that we can reset the origin for our next quad
+      //reset origin of quads
       popMatrix();
     }
     
