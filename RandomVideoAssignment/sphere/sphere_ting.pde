@@ -19,7 +19,7 @@ void draw()
   stroke(#393939);
   strokeWeight(2);
 
-  // draw the waveforms so we can see what we are monitoring
+  // draw weirdly shaped sphere 
   for (int i = 0; i < in.bufferSize() - 1; i++)
   {
     noFill();
