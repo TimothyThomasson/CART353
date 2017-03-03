@@ -11,8 +11,6 @@ class Head {
     head.scale(2500);
   }
 
-
-
   void display() {
     directionalLight(255, 0, 0, 0, -1, -10);
     background(255);
@@ -23,4 +21,17 @@ class Head {
     shape(head, width/2, height/2-1600);
     popMatrix();
   }
+
+  void loadEventListeners(){  
+  }
+  
+  void destroyEventListeners(){  
+  }
+
+
+
+
+
 }
+
+ 
