@@ -22,4 +22,15 @@ class ScenarioThree {
     shape(head, width/2, height/2-1600);
     popMatrix();
   }
+
+
+
+
+void loadEventListeners() {
+}
+
+void destroyEventListeners() {
+}
+
+
 }

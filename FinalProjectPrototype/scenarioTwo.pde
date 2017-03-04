@@ -4,13 +4,10 @@ class ScenarioTwo {
   PShape head;
 
   ScenarioTwo() {
-
     head = loadShape("M1.obj");
     lights();
     head.scale(2500);
   }
-
-
 
   void display() {
     directionalLight(0, 255, 0, 0, -1, -10);
@@ -21,5 +18,13 @@ class ScenarioTwo {
     rotateX(radians(frameCount));
     shape(head, width/2, height/2-1600);
     popMatrix();
+  }
+
+
+
+  void loadEventListeners() {
+  }
+
+  void destroyEventListeners() {
   }
 }

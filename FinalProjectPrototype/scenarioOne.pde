@@ -1,5 +1,4 @@
 
-
 class Head {
 
   PShape head;
@@ -22,16 +21,9 @@ class Head {
     popMatrix();
   }
 
-  void loadEventListeners(){  
-  }
-  
-  void destroyEventListeners(){  
+  void loadEventListeners() {
   }
 
-
-
-
-
+  void destroyEventListeners() {
+  }
 }
-
- 

@@ -14,13 +14,12 @@ ScenarioThree scenarioThree;
 void setup() {
 
   //  SET SIZE OF WINDOW 
-  size(3000, 2000, P3D);
-  
+  size(2000, 1000, P3D);
+
   //  INIT SCENARIO CLASSES
   head = new Head();
   scenarioTwo = new ScenarioTwo();
   scenarioThree = new ScenarioThree();
-  
 
   //  INITIALZE SCENARIOS LIST
   scenarios = new String[3];
@@ -29,7 +28,7 @@ void setup() {
   scenarios[0] = "Head";  
   scenarios[1] = "scenarioTwo"; 
   scenarios[2] = "scenarioThree";
-  
+
   //CHOOSE A RANDOM SCENARIO
   pickRandom();
 }
@@ -51,9 +50,25 @@ void pickRandom() {
   // REMOVE EVENT LISTENERS FROM ACTIVE SCENARIO
   //
 
+  if (scenarios[activeScenarioIndex] == "Head") {
+    head.destroyEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioTwo") {
+    scenarioTwo.destroyEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioThree") {
+    scenarioThree.destroyEventListeners();
+  }
+
+
   //  PICK A RANDOM INDEX OF THE SCENARIOS ARRAY
   activeScenarioIndex = int(random(scenarios.length)); 
 
 
   //LOAD EVENT LISTENERS FOR NEW SCENARIO
+  if (scenarios[activeScenarioIndex] == "Head") {
+    head.loadEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioTwo") {
+    scenarioTwo.loadEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioThree") {
+    scenarioThree.loadEventListeners();
+  }
 }
