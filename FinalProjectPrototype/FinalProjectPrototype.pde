@@ -96,12 +96,12 @@ void pickRandom() {
 
 void checkTimer() {
 
-  // GET HOW MANY SECONDS SINCE RUN TIME
-  int seconds = int(millis() / 1000);
+  //// GET HOW MANY SECONDS SINCE RUN TIME
+  //int seconds = int(millis() / 1000);
 
-  if (seconds % 20 == 0) {
-    pickRandom();
-  }
+  //if (seconds % 20 == 0) {
+  //  pickRandom();
+  //}
 
-  println(seconds);
+  //println(seconds);
 }

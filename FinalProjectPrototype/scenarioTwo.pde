@@ -9,8 +9,8 @@ class Animation {
   Animation() {
 
     // INIT IMAGE REFERENCE DATA
-    String imagePrefix = "frames/monkAnimation";
-    int count = 37;
+    String imagePrefix = "frames2/skull";
+    int count = 58;
 
     //
     // LOAD IMAGES
