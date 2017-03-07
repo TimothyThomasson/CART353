@@ -22,16 +22,6 @@ class Head {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 //Minim minim;
 //AudioInput in;
 //Movie myMovie;

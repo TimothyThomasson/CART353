@@ -1,5 +1,5 @@
 
-// TIMOTHY THOMASSON FINAL PROJECT
+// TIMOTHY THOMASSON -- FINAL PROJECT
 // CART 353
 // RILLA KHALED
 
@@ -30,7 +30,7 @@ void setup() {
   leap = new LeapMotion(this);
 
   // SET SIZE OF WINDOW 
-  size(2000, 1000, P3D);
+  fullScreen(P3D);
 
   // INIT SCENARIO CLASSES
   head = new Head();
@@ -96,12 +96,12 @@ void pickRandom() {
 
 void checkTimer() {
 
-  //// GET HOW MANY SECONDS SINCE RUN TIME
-  //int seconds = int(millis() / 1000);
+  // GET HOW MANY SECONDS SINCE RUN TIME
+  int seconds = int(millis() / 1000);
 
-  //if (seconds % 20 == 0) {
-  //  pickRandom();
-  //}
+  if (seconds % 20 == 0) {
+    pickRandom();
+  }
 
-  //println(seconds);
+  println(seconds);
 }
