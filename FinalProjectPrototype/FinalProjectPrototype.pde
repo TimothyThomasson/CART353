@@ -4,7 +4,6 @@
 // RILLA KHALED
 
 // ======================================================
-
 // IMPORT LEAP LIBRARY
 import de.voidplus.leapmotion.*; 
 
@@ -12,7 +11,6 @@ import de.voidplus.leapmotion.*;
 LeapMotion leap;
 
 // ======================================================
-
 // ARRAY THAT HOLDS REFERENCE TO SCENARIO CLASSES
 String[] scenarios;
 int activeScenarioIndex;
@@ -21,6 +19,13 @@ int activeScenarioIndex;
 Head head;
 Animation animation;
 ScenarioThree scenarioThree;
+ScenarioFour scenarioFour;
+ScenarioFive scenarioFive;
+ScenarioSix scenarioSix;
+ScenarioSeven scenarioSeven;
+ScenarioEight scenarioEight;
+ScenarioNine scenarioNine;
+ScenarioTen scenarioTen;
 
 // ======================================================
 // INITIALIZE ARTWORK
@@ -36,18 +41,35 @@ void setup() {
   head = new Head();
   animation = new Animation();
   scenarioThree = new ScenarioThree();
+  scenarioFour = new ScenarioFour();
+  scenarioFive = new ScenarioFive();
+  scenarioSix = new ScenarioSix();
+  scenarioSeven = new ScenarioSeven();
+  scenarioEight = new ScenarioEight();
+  scenarioNine = new ScenarioNine();
+  scenarioTen = new ScenarioTen();
+  
 
   // INITIALZE SCENARIOS LIST
-  scenarios = new String[3];
+  scenarios = new String[10];
 
   // LOAD SCENARIO REFERENCES INTO ARRAY
   scenarios[0] = "Head";  
   scenarios[1] = "animation"; 
   scenarios[2] = "scenarioThree";
+  scenarios[3] = "scenarioFour";
+  scenarios[4] = "scenarioFive";
+  scenarios[5] = "scenarioSix";
+  scenarios[6] = "scenarioSeven";
+  scenarios[7] = "scenarioEight";
+  scenarios[8] = "scenarioNine";
+  scenarios[9] = "scenarioTen";
+  
 
   // CHOOSE A RANDOM SCENARIO
   pickRandom();
 }
+
 // ======================================================  
 void draw() {
 
@@ -57,8 +79,23 @@ void draw() {
     animation.display();
   } else if (scenarios[activeScenarioIndex] == "scenarioThree") {
     scenarioThree.display();
+  } else if (scenarios[activeScenarioIndex] == "scenarioFour") {
+    scenarioFour.display();
+  } else if (scenarios[activeScenarioIndex] == "scenarioFive") {
+    scenarioFive.display();
+  } else if (scenarios[activeScenarioIndex] == "scenarioSix") {
+    scenarioSix.display();
+  } else if (scenarios[activeScenarioIndex] == "scenarioSeven"){
+    scenarioSeven.display();
+  } else if (scenarios[activeScenarioIndex] == "scenarioEight"){
+    scenarioEight.display(); 
+  } else if (scenarios[activeScenarioIndex] == "scenarioNine") {
+    scenarioNine.display(); 
+  } else if (scenarios[activeScenarioIndex] == "scemarioTen"){
+    scenarioTen.display();
   }
-
+  
+    
   // CHECK FOR ELAPSED TIME
   checkTimer();
 }
@@ -66,7 +103,7 @@ void draw() {
 void pickRandom() {
 
   //
-  // REMOVE EVENT LISTENERS FROM ACTIVE SCENARIO
+  // REMOVE EVENT LISTENERS FROM ACTIVE//PREVIOUS  SCENARIO
   //
 
   if (scenarios[activeScenarioIndex] == "Head") {
@@ -75,7 +112,21 @@ void pickRandom() {
     animation.destroyEventListeners();
   } else if (scenarios[activeScenarioIndex] == "scenarioThree") {
     scenarioThree.destroyEventListeners();
-  }
+  } else if (scenarios[activeScenarioIndex] == "scenarioFour") {
+    scenarioFour.destroyEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioFive") {
+    scenarioFive.destroyEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioSix") {
+    scenarioSix.destroyEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioSeven") {
+    scenarioSeven.destroyEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioEight") {
+    scenarioEight.destroyEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioNine") {
+    scenarioNine.destroyEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioTen") {
+    scenarioTen.destroyEventListeners();
+  } 
 
 
   // PICK A RANDOM INDEX OF THE SCENARIOS ARRAY
@@ -89,6 +140,20 @@ void pickRandom() {
     animation.loadEventListeners();
   } else if (scenarios[activeScenarioIndex] == "scenarioThree") {
     scenarioThree.loadEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioFour") {
+    scenarioFour.loadEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioFive") {
+    scenarioFive.loadEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioSix") {
+    scenarioSix.loadEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioSeven") {
+    scenarioSeven.loadEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioEight") {
+    scenarioEight.loadEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioNine") {
+    scenarioNine.loadEventListeners();
+  } else if (scenarios[activeScenarioIndex] == "scenarioTen") {
+    scenarioTen.loadEventListeners();
   }
 }
 
@@ -104,4 +169,8 @@ void checkTimer() {
   }
 
   println(seconds);
+}
+
+
+void transition() {
 }
