@@ -35,7 +35,8 @@ void setup() {
   leap = new LeapMotion(this);
 
   // SET SIZE OF WINDOW 
-  fullScreen(P3D);
+  //fullScreen(P3D);
+  size(1920,1080,P3D);
 
   // INIT SCENARIO CLASSES
   head = new Head();
