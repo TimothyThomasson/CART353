@@ -19,9 +19,10 @@ class ParticleSystem {
       } else if (keyCode == DOWN) {
         particles.add(new Sprinkler(origin));
       } else if (keyCode == LEFT) {
-        particles.add(new Rain(origin));
+        background(#72A567);
+        particles.add(new Termites(origin));
       } else {
-        particles.add(new Dart(origin));
+        particles.add(new Glitches(origin));
       }
     }
   }

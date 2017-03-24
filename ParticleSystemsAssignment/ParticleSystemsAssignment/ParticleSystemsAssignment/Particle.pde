@@ -33,7 +33,7 @@ class Particle {
     ellipse(position.x,position.y,12,12);
   }
   
-  // Is the particle still useful?
+  // WHEN TO KILL PARTICLE?
   boolean isDead() {
     if (lifespan < 0.0) {
       return true;

@@ -1,12 +1,12 @@
 
 // ======================================================
 
-class Dart extends Particle {
+class Glitches extends Particle {
 
   float randomPoint;
   int randomVert;
 
-  Dart(PVector l) {
+  Glitches(PVector l) {
     super(l);
       randomPoint = random(50);
   }

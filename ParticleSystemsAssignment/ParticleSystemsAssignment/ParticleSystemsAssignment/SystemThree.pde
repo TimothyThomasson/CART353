@@ -1,11 +1,11 @@
 
 // ======================================================
 
-class Rain extends Particle {
+class Termites extends Particle {
 
   float topspeed;
 
-  Rain(PVector l) {
+  Termites(PVector l) {
     super(l);
     topspeed = 1000.0;
   }
@@ -18,22 +18,19 @@ class Rain extends Particle {
     
     lifespan -= 0.1;
 
-    // and we add a call to checkEdges, so our raindrops wrap
     checkEdges();
   }
 
   // we override Particle's display method
   void display() {
-    stroke(127, lifespan);
+    stroke(#674D2D, lifespan);
     pushMatrix();
     translate(position.x, position.y);
     rotate(velocity.heading());
-    // a raindrop is a line drawn at its velocity angle
-    line(0, 0, 10, 0);
+    ellipse(0, 0, 10, 5);
     popMatrix();
   }
 
-  // checkEdges() wraps position horizontally + vertically
   void checkEdges() {
 
     if (position.x > width) {
