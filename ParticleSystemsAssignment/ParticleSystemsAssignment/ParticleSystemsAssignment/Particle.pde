@@ -1,9 +1,5 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
 
-// Simple Particle System
-
+// ======================================================
 class Particle {
   
   PVector position;
@@ -27,13 +23,13 @@ class Particle {
   void update() {
     velocity.add(acceleration);
     position.add(velocity);
-    lifespan -= 2.0;
+    lifespan -= 1.0;
   }
 
   // Method to display
   void display() {
     noStroke();
-    fill(127,lifespan);
+    fill(255,lifespan);
     ellipse(position.x,position.y,12,12);
   }
   

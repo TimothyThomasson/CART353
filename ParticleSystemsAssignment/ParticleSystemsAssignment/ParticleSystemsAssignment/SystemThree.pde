@@ -7,7 +7,7 @@ class Rain extends Particle {
 
   Rain(PVector l) {
     super(l);
-    topspeed = 2.0;
+    topspeed = 1000.0;
   }
 
   // we override Particle's update method
@@ -15,8 +15,8 @@ class Rain extends Particle {
     velocity.add(acceleration);
     position.add(velocity);
 
-    // let's turn off lifespan decreasing: these raindrops will live forever
-    // lifespan -= 2.0;
+    
+    lifespan -= 0.1;
 
     // and we add a call to checkEdges, so our raindrops wrap
     checkEdges();

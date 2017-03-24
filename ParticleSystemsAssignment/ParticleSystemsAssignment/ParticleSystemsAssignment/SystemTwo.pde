@@ -3,15 +3,23 @@
 
 class Dart extends Particle {
 
-  float pLen;
+  float randomPoint;
+  int randomVert;
 
   Dart(PVector l) {
     super(l);
-    pLen = 5;
+      randomPoint = random(50);
   }
 
-  // Inherits update() from parent
+
+  void update() {
+    velocity.add(acceleration);
+    position.add(velocity);
+    lifespan -= 0.2;
   
+  }
+  // Inherits update() from parent
+
   // we override Particle's display method
   void display() {
     stroke(0, lifespan);
@@ -23,9 +31,8 @@ class Dart extends Particle {
     rotate(velocity.heading());
 
     // draw a dart-like thing
-    triangle(0, -pLen, 0, pLen, pLen*3, 0);
-    line(0, 0, pLen*3, 0);
-
-    popMatrix();
+    noFill();
+    stroke(255);
+    quad(randomPoint, -randomPoint, randomPoint, randomPoint, randomPoint*3, randomPoint, randomPoint*2,-randomPoint);
   }
 }
