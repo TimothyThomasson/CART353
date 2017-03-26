@@ -8,7 +8,7 @@ class Glitches extends Particle {
 
   Glitches(PVector l) {
     super(l);
-      randomPoint = random(50);
+    randomPoint = random(50);
   }
 
 
@@ -17,7 +17,6 @@ class Glitches extends Particle {
     velocity.add(acceleration);
     position.add(velocity);
     lifespan -= 0.2;
-  
   }
 
 
@@ -31,9 +30,9 @@ class Glitches extends Particle {
     translate(position.x, position.y);
     rotate(velocity.heading());
 
-//DRAW THE GLITCHES AT RANDOM SPOTS
+    //DRAW THE GLITCHES AT RANDOM SPOTS
     noFill();
     stroke(255);
-    quad(randomPoint, -randomPoint, randomPoint, randomPoint, randomPoint*3, randomPoint, randomPoint*2,-randomPoint);
+    quad(randomPoint, -randomPoint, randomPoint, randomPoint, randomPoint*3, randomPoint, randomPoint*2, -randomPoint);
   }
 }

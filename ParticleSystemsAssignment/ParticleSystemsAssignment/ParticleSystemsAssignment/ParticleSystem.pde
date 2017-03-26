@@ -1,4 +1,5 @@
 
+// ======================================================
 
 class ParticleSystem {
   ArrayList<Particle> particles;
@@ -14,8 +15,8 @@ class ParticleSystem {
   void addParticle() {
     if (key == CODED) {
       if (keyCode == UP) {
-        background(45,55,56);
-        particles.add(new Particle(origin)); 
+        background(45, 55, 56);
+        particles.add(new Particle(origin));
       } else if (keyCode == DOWN) {
         particles.add(new Sprinkler(origin));
       } else if (keyCode == LEFT) {

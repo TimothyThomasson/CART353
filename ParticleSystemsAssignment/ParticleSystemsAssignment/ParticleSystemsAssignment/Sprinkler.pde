@@ -8,7 +8,7 @@ class Sprinkler extends Particle {
     super(l);
   }
 
-//CHANGE PARTICLE DISPLAY METHOD
+  //CHANGE PARTICLE DISPLAY METHOD
   void display() {
     rectMode(CENTER);
     noStroke();

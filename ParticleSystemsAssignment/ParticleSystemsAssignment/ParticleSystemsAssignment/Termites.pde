@@ -16,13 +16,13 @@ class Termites extends Particle {
     velocity.add(acceleration);
     position.add(velocity);
 
-    
+
     lifespan -= 0.1;
 
     checkEdges();
   }
 
-//METHOD TO DISPLY THIS CHANGE FOR THE PARTICLE
+  //METHOD TO DISPLY THIS CHANGE FOR THE PARTICLE
   void display() {
     stroke(#674D2D, lifespan);
     pushMatrix();
