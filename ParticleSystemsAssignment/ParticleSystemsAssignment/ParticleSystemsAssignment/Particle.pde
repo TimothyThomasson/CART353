@@ -19,14 +19,14 @@ class Particle {
     display();
   }
 
-  // Method to update position
+  //METHOD TO UPDATE THE POS
   void update() {
     velocity.add(acceleration);
     position.add(velocity);
     lifespan -= 1.0;
   }
 
-  // Method to display
+  // METHOD TO DISPLY
   void display() {
     noStroke();
     fill(255,lifespan);

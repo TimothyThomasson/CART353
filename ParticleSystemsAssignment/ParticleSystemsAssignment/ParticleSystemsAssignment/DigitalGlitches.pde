@@ -12,15 +12,16 @@ class Glitches extends Particle {
   }
 
 
+  //METHOD TO UPDATE THE POS
   void update() {
     velocity.add(acceleration);
     position.add(velocity);
     lifespan -= 0.2;
   
   }
-  // Inherits update() from parent
 
-  // we override Particle's display method
+
+
   void display() {
     stroke(0, lifespan);
     strokeWeight(1);
@@ -30,7 +31,7 @@ class Glitches extends Particle {
     translate(position.x, position.y);
     rotate(velocity.heading());
 
-    // draw a dart-like thing
+//DRAW THE GLITCHES AT RANDOM SPOTS
     noFill();
     stroke(255);
     quad(randomPoint, -randomPoint, randomPoint, randomPoint, randomPoint*3, randomPoint, randomPoint*2,-randomPoint);

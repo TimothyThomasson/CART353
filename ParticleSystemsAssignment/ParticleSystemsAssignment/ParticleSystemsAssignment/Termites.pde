@@ -10,7 +10,8 @@ class Termites extends Particle {
     topspeed = 1000.0;
   }
 
-  // we override Particle's update method
+
+  //METHOD TO UPDATE THE POS
   void update() {
     velocity.add(acceleration);
     position.add(velocity);
@@ -21,7 +22,7 @@ class Termites extends Particle {
     checkEdges();
   }
 
-  // we override Particle's display method
+//METHOD TO DISPLY THIS CHANGE FOR THE PARTICLE
   void display() {
     stroke(#674D2D, lifespan);
     pushMatrix();
