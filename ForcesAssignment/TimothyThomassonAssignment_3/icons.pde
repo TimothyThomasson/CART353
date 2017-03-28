@@ -1,5 +1,5 @@
 
-class Icon {
+class Icons {
 
 
   //class variables
@@ -11,7 +11,7 @@ class Icon {
 
 
   //constructor for icon
-  Icon(PImage file, int x, int y) {
+  Icons(PImage file, int x, int y) {
     //load icon image
     iconImage = file;
     println(x, y);
