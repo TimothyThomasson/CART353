@@ -37,7 +37,7 @@ RandomShapeGeneratorTwo randomShapeGeneratorTwo;
 HandAnimation handAnimation;
 RandomObjects randomObjects;
 RandomShapeDraw randomShapeDraw;
-Bacteria bacteria;
+//Bacteria bacteria;
 //ScenarioEight scenarioEight;
 //ScenarioNine scenarioNine;
 //ScenarioTen scenarioTen;
@@ -103,13 +103,13 @@ void setup() {
   handAnimation = new HandAnimation(leap);
   randomObjects = new RandomObjects(leap);
   randomShapeDraw = new RandomShapeDraw(leap);
-  bacteria = new Bacteria(leap);
+  //bacteria = new Bacteria(leap);
   //scenarioEight = new ScenarioEight();
   //scenarioNine = new ScenarioNine();
   //scenarioTen = new ScenarioTen();
 
   // *** INITIALZE SCENARIOS LIST ***
-  scenarios = new String[7];
+  scenarios = new String[6];
 
   // LOAD SCENARIO REFERENCES INTO ARRAY
   scenarios[0] = "Box";  
@@ -118,7 +118,7 @@ void setup() {
   scenarios[3] = "HandAnimation";
   scenarios[4] = "RandomObjects";
   scenarios[5] = "RandomShapeDraw";
-  scenarios[6] = "Bacteria";
+  //scenarios[6] = "Bacteria";
   //scenarios[7] = "scenarioEight";
   //scenarios[8] = "scenarioNine";
   //scenarios[9] = "scenarioTen";
