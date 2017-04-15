@@ -1,24 +1,48 @@
 
-//import de.voidplus.leapmotion.*; 
-//LeapMotion leap;
-
-//import processing.video.*;
-//Movie background;
+//// CREATE  A LEAP CONTROLLED PONG GAME :) PLAY AGAINST A WALL
+//// ======================================================
 
 
-//boolean gameStart = false;
 
-//float x = 150;
-//float y = 150;
-//float speedX = random(100, 100);
-//float speedY = random(100, 100);
-//int leftColor = 128;
-//int rightColor = 128;
-//int diam;
-//int rectSize = 150;
-//float diamHit;
 
-//float yPosition;
+
+
+
+
+//class Pong {
+
+//  //CREATE OBJECTS FOR LIBS
+//  LeapMotion leap;
+//  Movie background;
+
+//  //CREATE VARIABLES FOR SHAPE
+//  boolean gameStart = false;
+//  float x = 150;
+//  float y = 150;
+//  float speedX = random(100, 100);
+//  float speedY = random(100, 100);
+//  int leftColor = 128;
+//  int rightColor = 128;
+//  int diam;
+//  int rectSize = 150;
+//  float diamHit;
+//  float yPosition;
+
+
+
+
+//  Pong(leapMotion leap) {
+//  }
+//}
+
+
+
+
+
+
+
+
+
 
 
 //void setup() {
@@ -31,7 +55,7 @@
 //  background = new Movie(this, "background.mp4");
 //  background.loop();
 //  background.volume(0);
-//   background.frameRate(6);  
+//  background.frameRate(6);
 //}
 
 //void draw() { 

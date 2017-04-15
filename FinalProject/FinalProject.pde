@@ -165,16 +165,25 @@ void draw() {
     imageMode(CENTER);
 
     //CREATE PIXELATION EFFECT :) 
-    for (int j = 0; j < numPixels; j++) {
 
-      for (int i = 0; i < numPixels; i++) {
+    Hand rightHandOnScreen = leap.getRightHand();
 
-        //alpha();
-        imageMode(CENTER);
-        //tint(150, 5, 150, 200);
-        //WILL START VIDEO ONCE HAND IS DETECTED AND xPosition changes
-        fill(myMovieColors[j*numPixels + i], mouseX*i);
-        rect(i*blockSize, j*blockSize, blockSize-1, blockSize-1);
+    if (rightHandOnScreen != null) {
+
+      Finger finger = rightHandOnScreen.getFingers().get(0); 
+      PVector fingerPosition = finger.getPosition();
+
+      for (int j = 0; j < numPixels; j++) {
+
+        for (int i = 0; i < numPixels; i++) {
+
+          //alpha();
+          imageMode(CENTER);
+          //tint(150, 5, 150, 200);
+          //WILL START CALIBRATION BG VIDEO ONCE HAND IS DETECTED AND xPosition changes!
+          fill(myMovieColors[j*numPixels + i], fingerPosition.x*i);
+          rect(i*blockSize, j*blockSize, blockSize-1, blockSize-1);
+        }
       }
     }
   }
