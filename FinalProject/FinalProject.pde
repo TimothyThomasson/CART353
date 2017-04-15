@@ -37,8 +37,8 @@ RandomShapeGeneratorTwo randomShapeGeneratorTwo;
 HandAnimation handAnimation;
 RandomObjects randomObjects;
 RandomShapeDraw randomShapeDraw;
-//Bacteria bacteria;
-//ScenarioEight scenarioEight;
+Bacteria bacteria;
+Pong pong;
 //ScenarioNine scenarioNine;
 //ScenarioTen scenarioTen;
 
@@ -50,6 +50,10 @@ int numPixels;
 int blockSize = 10;
 color myMovieColors[];
 PFont myFont;
+
+//MAKE VARIABLE TO HOLD LEAP HAND POSITIONS GLOBALLY
+float xPosition;
+float yPosition;
 
 // DECLARE TRANSITION SOUND OBJECT
 SoundFile transitionSound;
@@ -78,9 +82,12 @@ void setup() {
 
   // ======================================================
   // STUFF FOR INTRO VIDEO 
-
   stroke(0);
   strokeWeight(1);
+
+  // INIT x/y POSITIONS (THIS IS UPDATED WITHIN THE CROSSHAIR METHOD OF THE CALIBRATION CLASS
+  xPosition = 0;
+  yPosition = 0;
 
   // BACKGROUND VIDEO (THIS CANNOT BE PUT INTO THE CALIBRATION CLASS AND EASILY DISPLAYED)
   brixton = new Movie(this, "Brixton.mp4");
@@ -95,7 +102,6 @@ void setup() {
   strokeWeight(1);
 
   // ======================================================
-
   // INIT SCENARIO CLASSES
   box = new Box(leap);
   randomShapeGenerator = new RandomShapeGenerator(leap);
@@ -103,13 +109,13 @@ void setup() {
   handAnimation = new HandAnimation(leap);
   randomObjects = new RandomObjects(leap);
   randomShapeDraw = new RandomShapeDraw(leap);
-  //bacteria = new Bacteria(leap);
-  //scenarioEight = new ScenarioEight();
+  bacteria = new Bacteria(leap);
+  pong = new Pong(leap);
   //scenarioNine = new ScenarioNine();
   //scenarioTen = new ScenarioTen();
 
   // *** INITIALZE SCENARIOS LIST ***
-  scenarios = new String[6];
+  scenarios = new String[8];
 
   // LOAD SCENARIO REFERENCES INTO ARRAY
   scenarios[0] = "Box";  
@@ -118,8 +124,8 @@ void setup() {
   scenarios[3] = "HandAnimation";
   scenarios[4] = "RandomObjects";
   scenarios[5] = "RandomShapeDraw";
-  //scenarios[6] = "Bacteria";
-  //scenarios[7] = "scenarioEight";
+  scenarios[6] = "Bacteria";
+  scenarios[7] = "Pong";
   //scenarios[8] = "scenarioNine";
   //scenarios[9] = "scenarioTen";
 
@@ -165,25 +171,16 @@ void draw() {
     imageMode(CENTER);
 
     //CREATE PIXELATION EFFECT :) 
+    for (int j = 0; j < numPixels; j++) {
 
-    Hand rightHandOnScreen = leap.getRightHand();
+      for (int i = 0; i < numPixels; i++) {
 
-    if (rightHandOnScreen != null) {
-
-      Finger finger = rightHandOnScreen.getFingers().get(0); 
-      PVector fingerPosition = finger.getPosition();
-
-      for (int j = 0; j < numPixels; j++) {
-
-        for (int i = 0; i < numPixels; i++) {
-
-          //alpha();
-          imageMode(CENTER);
-          //tint(150, 5, 150, 200);
-          //WILL START CALIBRATION BG VIDEO ONCE HAND IS DETECTED AND xPosition changes!
-          fill(myMovieColors[j*numPixels + i], fingerPosition.x*i);
-          rect(i*blockSize, j*blockSize, blockSize-1, blockSize-1);
-        }
+        //alpha();
+        imageMode(CENTER);
+        //tint(150, 5, 150, 200);
+        //WILL START CALIBRATION BG VIDEO ONCE xPosition changes!
+        fill(myMovieColors[j*numPixels + i], xPosition*i);
+        rect(i*blockSize, j*blockSize, blockSize-1, blockSize-1);
       }
     }
   }
@@ -205,10 +202,9 @@ void draw() {
     } else if (scenarios[activeScenarioIndex] == "RandomShapeDraw") {
       randomShapeDraw.display();
     } else if (scenarios[activeScenarioIndex] == "Bacteria") {
-      Bacteria bc = new Bacteria(leap);
-      bc.display();
-    } else if (scenarios[activeScenarioIndex] == "scenarioEight") {
-      //scenarioEight.display();
+      bacteria.display();
+    } else if (scenarios[activeScenarioIndex] == "Pong") {
+      pong.display();
     } else if (scenarios[activeScenarioIndex] == "scenarioNine") {
       // scenarioNine.display();
     } else if (scenarios[activeScenarioIndex] == "scemarioTen") {
@@ -223,6 +219,7 @@ void draw() {
   // CHECK FOR ELAPSED TIME
   checkTimer();
 }
+
 // ======================================================
 void pickRandom() {
 
@@ -251,10 +248,10 @@ void pickRandom() {
     randomObjects.setupScenario();
   } else if (scenarios[activeScenarioIndex] == "RandomShapeDraw") {
     randomShapeDraw.setupScenario();
-  } else if (scenarios[activeScenarioIndex] == "scenarioSeven") {
-    //scenarioSeven.display();
-  } else if (scenarios[activeScenarioIndex] == "scenarioEight") {
-    //scenarioEight.display();
+  } else if (scenarios[activeScenarioIndex] == "Bacteria") {
+    bacteria.setupScenario();
+  } else if (scenarios[activeScenarioIndex] == "Pong") {
+    pong.setupScenario();
   } else if (scenarios[activeScenarioIndex] == "scenarioNine") {
     // scenarioNine.display();
   } else if (scenarios[activeScenarioIndex] == "scemarioTen") {
@@ -299,7 +296,7 @@ int getSeconds() {
   return millis()/1000;
 }
 
-
+// ======================================================
 // CALLED EVERY TIME  A NEW FRAME IS AVAILABLE TO READ
 void movieEvent(Movie m) {
   m.read();

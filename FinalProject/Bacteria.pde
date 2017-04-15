@@ -1,5 +1,5 @@
 
-// MAKES USE OF 'Punktiert' LIBRARY TO EMIT CREATE BACTERIA LIKE OBJECTS 
+// MAKES USE OF 'Punktiert' LIBRARY TO EMIT / CREATE BACTERIA LIKE OBJECTS 
 
 import punktiert.math.Vec;
 import punktiert.physics.*;
@@ -23,7 +23,6 @@ class Bacteria {
 
   public void display() {
 
-
     noStroke();
     fill(0, 255);
 
@@ -44,7 +43,6 @@ class Bacteria {
       physics.addParticle(particle);
     }
 
-
     background(255);
     Hand rightHandOnScreen = leap.getRightHand();
     physics.update();
@@ -56,5 +54,8 @@ class Bacteria {
     Finger finger = rightHandOnScreen.getFingers().get(0); 
     PVector fingerPosition = finger.getPosition();
     physics.addParticle(new VParticle(new Vec(fingerPosition.x, fingerPosition.y), 1, random(5, 20)).addBehavior(new BCollision()));
+  }
+
+  void setupScenario() {
   }
 }
