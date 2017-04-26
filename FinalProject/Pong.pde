@@ -43,15 +43,15 @@ class Pong {
     //translate(0, 0);
     //imageMode(CENTER);
 
-    background(255);
+    background(0);
 
-    fill(255);
+    fill(0);
     diam = 20;
     ellipse(x, y, diam, diam);
 
     getLeapPosition();
 
-    fill(255);
+    fill(0);
     rect(0, 0, 20, height);
     fill(rightColor);
     rect(width-30, yPosition-rectSize/2, 10, rectSize);
