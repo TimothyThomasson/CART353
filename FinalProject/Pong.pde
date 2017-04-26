@@ -43,7 +43,7 @@ class Pong {
     //translate(0, 0);
     //imageMode(CENTER);
 
-    background(0);
+    background(255);
 
     fill(0);
     diam = 20;
@@ -88,8 +88,8 @@ class Pong {
         gameStart = false;
         x = 150;
         y = 150; 
-        speedX = random(3, 5);
-        speedY = random(3, 5);
+        speedX = random(10, 15);
+        speedY = random(10, 15);
         rectSize = 150;
       }
 
