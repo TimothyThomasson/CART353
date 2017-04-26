@@ -7,6 +7,8 @@
 // This project attempts to embrace the notion of interaction for the sake of interaction.
 // As the user, it is your job to play around with what seems like a random ensemble of experiences.
 
+// (HAD TO MAKE VID SMALLER IN CALIBRATION INTRO BECAUSE OF DROPPING FRAME RATE ISSUES :,[    )
+
 // ======================================================
 // IMPORTS
 import de.voidplus.leapmotion.*; 
