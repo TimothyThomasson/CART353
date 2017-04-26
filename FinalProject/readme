@@ -1,3 +1,8 @@
+
+( "Could not run the sketch (Target VM failed to initialize)" -- This error is created due to incompatibilities with certain graphics cards. If this occurs please reset sketch. )
+
+
+
 // PROTOTYPE PRESENTATION: 
 
 https://docs.google.com/presentation/d/1gHrRrhyq16Ff3MPm9-LsKX_Ks-B2cXY45SxzJcJHlk0/edit?usp=sharing
